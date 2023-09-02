@@ -15,6 +15,17 @@ public class BattleShips {
         frame.setLocation(100, 100);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        MainMenu mainMenu = new MainMenu();
+        GamePage gamePage = new GamePage();
+
+        CardLayout cardLayout = new CardLayout();
+        JPanel mainPanel = new JPanel(cardLayout);
+        mainPanel.add(mainMenu, "Menu");
+        mainPanel.add(gamePage, "Game");
+
+        cardLayout.show(mainPanel, "Menu");
+
+        frame.add(mainPanel);
 
         frame.setVisible(true);
     }
