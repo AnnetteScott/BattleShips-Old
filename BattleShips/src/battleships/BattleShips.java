@@ -1,8 +1,8 @@
 package battleships;
 
 /**
- *
- * @author Annet
+ * Entry point for battleships
+ * @author gmt3870
  */
 public class BattleShips {
 
