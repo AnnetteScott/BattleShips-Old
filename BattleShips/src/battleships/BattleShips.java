@@ -17,11 +17,13 @@ public class BattleShips {
 
         MainMenu mainMenu = new MainMenu();
         GamePage gamePage = new GamePage();
+        HighScores highScores = new HighScores();
 
         CardLayout cardLayout = new CardLayout();
         JPanel mainPanel = new JPanel(cardLayout);
         mainPanel.add(mainMenu, "Menu");
         mainPanel.add(gamePage, "Game");
+        mainPanel.add(highScores, "Scores");
 
         cardLayout.show(mainPanel, "Menu");
 

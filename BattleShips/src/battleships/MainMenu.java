@@ -28,6 +28,14 @@ public class MainMenu extends JPanel {
             }
         });
         
+        JButton highScores = new JButton("<html><h2>High Scores</h2></html>");
+        highScores.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                CardLayout cardLayout = (CardLayout) getParent().getLayout();
+                cardLayout.show(getParent(), "Scores");
+            }
+        });  
         
         JPanel buttons = new JPanel(new GridBagLayout());
         buttons.add(startButton, constraints);
