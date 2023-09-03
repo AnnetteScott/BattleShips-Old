@@ -27,6 +27,9 @@ public class MainMenu extends JPanel {
                 cardLayout.show(getParent(), "Game");
             }
         });
+        startButton.setBackground(new Color(23, 188, 22));
+        startButton.setForeground(Color.WHITE);
+        startButton.setFocusPainted(false);
         
         JButton highScores = new JButton("<html><h2>High Scores</h2></html>");
         highScores.addActionListener(new ActionListener() {
