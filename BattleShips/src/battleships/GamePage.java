@@ -2,7 +2,6 @@ package battleships;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.border.*;
 
 /**
  * @author gmt3870
@@ -10,9 +9,10 @@ import javax.swing.border.*;
 public class GamePage extends JPanel{
     
     final static int BOARD_SIZE = 10;
+    static GameState state = GameState.notStarted;
     
     public GamePage(){
-        setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        setLayout(new FlowLayout(FlowLayout.CENTER, 30, 20));
         
         JPanel header = new JPanel();
         header.setSize(1200, 40);
@@ -26,33 +26,14 @@ public class GamePage extends JPanel{
                 cardLayout.show(getParent(), "Menu");
             }
         });
-
+        menuButton.setFocusPainted(false);
         header.add(menuButton);
         add(header);
         
-        JPanel gameBoard = new JPanel(new GridLayout(BOARD_SIZE + 1, BOARD_SIZE + 1));
-        gameBoard.setSize(300, 300);
-        gameBoard.add(new JLabel());
-        for(int i = 0; i < BOARD_SIZE; i++){
-            char letter = (char)('A' + i);
-            JLabel display = new JLabel(String.valueOf(letter));
-            display.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
-            gameBoard.add(display);
-        }
+        PlayerBoard playerShips = new PlayerBoard();
+        BotBoard botShips = new BotBoard();
         
-        for(int i = 0; i < BOARD_SIZE; i++){
-            JLabel num = new JLabel(String.valueOf(i + 1));
-            num.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
-            gameBoard.add(num);
-            
-            for(int j = 0; j < BOARD_SIZE; j++){
-                JLabel display = new JLabel();
-                display.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
-                gameBoard.add(display);
-            }
-            
-        }
-        
-        add(gameBoard, BorderLayout.CENTER);
+        add(playerShips);
+        add(botShips);
     }
 }
