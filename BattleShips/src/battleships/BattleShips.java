@@ -11,7 +11,7 @@ public class BattleShips {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setTitle("Battleships");
-        frame.setSize(1200, 800);
+        frame.setSize(1200, 700);
         frame.setLocation(1500, 100);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

@@ -1,8 +1,6 @@
 package battleships;
 import static battleships.GamePage.BOARD_SIZE;
-import static battleships.GamePage.state;
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
@@ -30,13 +28,13 @@ public class PlayerBoard extends JPanel{
             add(display);
         }
         
-        for(int i = 0; i < BOARD_SIZE; i++){
-            JLabel num = new JLabel(String.valueOf(i + 1), SwingConstants.CENTER);
+        for(int y = 0; y < BOARD_SIZE; y++){
+            JLabel num = new JLabel(String.valueOf(y + 1), SwingConstants.CENTER);
             num.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
             num.setPreferredSize(dim);
             add(num);
             
-            for(int j = 0; j < BOARD_SIZE; j++){
+            for(int x = 0; x < BOARD_SIZE; x++){
                 JLabel cell = new JLabel();
                 cell.setOpaque(true);
                 cell.setBackground(Color.WHITE);

@@ -29,15 +29,15 @@ public class BotBoard extends JPanel{
             add(display);
         }
         
-        for(int i = 0; i < BOARD_SIZE; i++){
-            JLabel num = new JLabel(String.valueOf(i + 1), SwingConstants.CENTER);
+        for(int y = 0; y < BOARD_SIZE; y++){
+            JLabel num = new JLabel(String.valueOf(y + 1), SwingConstants.CENTER);
             num.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
             num.setPreferredSize(dim);
             add(num);
             
-            for(int j = 0; j < BOARD_SIZE; j++){
+            for(int x = 0; x < BOARD_SIZE; x++){
                 JButton display = new JButton();
-                display.setBackground(new Color(255, 255, 255));
+                display.setBackground(Color.WHITE);
                 display.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
                 display.setPreferredSize(dim);
                 add(display);

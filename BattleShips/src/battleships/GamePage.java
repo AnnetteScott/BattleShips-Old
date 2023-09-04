@@ -9,7 +9,6 @@ import javax.swing.*;
 public class GamePage extends JPanel{
     
     final static int BOARD_SIZE = 10;
-    static GameState state = GameState.notStarted;
     
     public GamePage(){
         setLayout(new FlowLayout(FlowLayout.CENTER, 30, 20));
