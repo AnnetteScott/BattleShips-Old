@@ -9,6 +9,10 @@ import javax.swing.*;
 public class GamePage extends JPanel{
     
     final static int BOARD_SIZE = 10;
+    Player player;
+    Bot bot;
+    PlayerBoard playerBoard;
+    BotBoard botBoard;
     
     public GamePage(){
         setLayout(new FlowLayout(FlowLayout.CENTER, 30, 20));
@@ -29,10 +33,14 @@ public class GamePage extends JPanel{
         header.add(menuButton);
         add(header);
         
-        PlayerBoard playerShips = new PlayerBoard();
-        BotBoard botShips = new BotBoard();
+        player = new Player("", 0);
+        bot = new Bot("", 0);
         
-        add(playerShips);
-        add(botShips);
+        botBoard = new BotBoard(player);
+        playerBoard = new PlayerBoard(bot);
+        
+        
+        add(playerBoard);
+        add(botBoard);
     }
 }

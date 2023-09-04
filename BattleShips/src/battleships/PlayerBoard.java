@@ -10,7 +10,7 @@ import javax.swing.border.*;
  */
 public class PlayerBoard extends JPanel{
     
-    public PlayerBoard(){
+    public PlayerBoard(Bot bot){
         setLayout(new GridLayout(BOARD_SIZE + 1, BOARD_SIZE + 1));
         setSize(300, 300);
         
@@ -39,7 +39,7 @@ public class PlayerBoard extends JPanel{
                 cell.setOpaque(true);
                 cell.setBackground(Color.WHITE);
                 cell.setBorder(new MatteBorder(1, 1, 1, 1, Color.BLACK));
-                cell.setPreferredSize(dim);                
+                cell.setPreferredSize(dim);
                 
                 add(cell);
             }
